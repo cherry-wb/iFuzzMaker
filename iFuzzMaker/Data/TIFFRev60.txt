@@ -1,0 +1,32 @@
+0100	256	ImageWidth	画像の幅	SHORT or LONG	1	なし		画像データの列の数、即ち行中の画素の数。JPEG圧縮データでは JPEGマーカで代用されるので記録してはならない。
+0101	257	ImageLength	画像の高さ	SHORT or LONG	1	なし		画像データの行の数。JPEG圧縮データでは JPEGマーカで代用されるので記録してはならない。
+0102	258	BitsPerSample	画素のビットの深さ	SHORT	3	8  8  8		1コンポーネント当たりのビット数。本規格では画像の各コンポーネントは 8bit なので 8 が書かれる。SamplesPerPixelも参照されたい。JPEG圧縮データでは JPEGマーカで代用されるので記録してはならない。
+0103	259	Compression	圧縮の種類	SHORT	1	なし	1 = 非圧縮\n6 = JPEG圧縮（サムネイルのみ）\nその他 = 予約	その画像データに使用された圧縮方法。主画像が JPEG圧縮データでは不要なため記録してはならない。\nサムネイルが JPEG圧縮データの場合は 6を記録する。
+0106	262	PhotometricInterpretation	画素構成	SHORT	1	なし	2 = RGB\n6 =  YCbCr\nその他 = 予約	画素の構成。JPEG圧縮データでは JPEGマーカで代用されるので記録してはならない。
+0112	274	Orientation	画像方向	SHORT	1	1	1 = 0番目の行が目で見たときの画像の上(visual top)、0番目の列が左側(visualleft-hand side)となる。\n2 = 0番目の行が目で見たときの画像の上、0番目の列が右側(visual right-handside)となる。\n3 = 0番目の行が目で見たときの画像の下(visual bottom)、0番目の列が右側となる。\n4 = 0番目の行が目で見たときの画像の下、0番目の列が左側となる。\n5 = 0番目の行が目で見たときの画像の左側、0番目の列が上となる。\n6 = 0番目の行が目で見たときの画像の右側、0番目の列が上となる。\n7 = 0番目の行が目で見たときの画像の右側、0番目の列が下となる。\n8 = 0番目の行が目で見たときの画像の左側、0番目の列が下となる。\nその他 = 予約	行と列の観点から見た、画像の方向。
+0115	277	SamplesPerPixel	コンポーネント数	SHORT	1	3		1画素当たりのコンポーネントの数。本規格はRGB画像またはYCbCr画像を対象としているので 3が書かれる。JPEG圧縮データでは JPEGマーカで代用されるので記録してはならない。
+011C	284	PlanarConfiguration	画像データの並び	SHORT	1		1 = 点順次(chunky)フォーマット\n2 = 面順次(planar)フォーマット\nその他 = 予約	各画素のコンポーネントが点順次、面順次のどちらで記録されているかを示す。JPEG圧縮ファイルでは JPEGマーカで代用されるため書かない。このフィールドがないときは TIFFのデフォルト1(点順次)に従う。
+0212	530	YCbCrSubSampling	画素構成	SHORT	2		[2, 1] = YCbCr 4:2:2\n[2, 2] = YCbCr 4:2:0\nその他 = 予約	輝度サンプルに対する、クロマサンプルのサブサンプル比率を特定する。JPEG圧縮データではJPEGマーカで代用されるので記録してはならない。
+0213	531	YCbCrPositioning	画素構成	SHORT	1	1	1 = 中心\n2 = 一致(co-sited)\nその他 = 予約	輝度サンプルに対する、クロマサンプルの相対的配置を特定する。このフィールドは JPEG圧縮データ又は非圧縮 YCbCrデータ記録時だけに書かれる。TIFF の定めるデフォルト値は 1(中心)であるが、YCbCr 4:2:2の場合、TV系の画質改善を目的に本規格では 2(一致)の形式のデータを記録することを推奨する。このフィールドがないとき、Exif/DCF Readerは TIFFのデフォルトに従う。一方、YCbCr 4:2:0の場合は TIFFのデフォルト(中心)を推奨する。Exif/DCF Readerの能力が限定され YCbCrPositioning の両方の値に対応できない場合は、このフィールドの値に関わらず TIFF のデフォルト1で再生しなければならない。Exif/DCF Readerは一致、中心ともに再生できることが望ましい。
+011A	282	XResolution	画像の幅の解像度	RATIONAL	1	72		ImageWidth方向の 1 ResolutionUnitあたりの画素数。画像の解像度が不明のときには 72[dpi]を記録しなければならない。
+011B	283	YResolution	画像の高さの解像度	RATIONAL	1	72		ImageLength方向の 1 ResolutionUnitあたりの画素数。XResolutionと同じ値を記録しなければならない。
+0128	296	ResolutionUnit	画像の幅と高さの解像度の単位	SHORT	1	2	2 = インチ\n3 = センチメートル\nその他 = 予約	XResolutionと YResolutionの単位系。XResolution、YResolutionと一緒に用いる。画像の解像度が不明のときには 2(インチ)を記録しなければならない。
+0111	273	StripOffsets	ストリップのバイトオフセット	SHORT or LONG	StripsPerImage...PlanarConfiguration = 1のとき\nSamplesPerPixel×StripsPerImage...PlanarConfiguration = 2のとき	なし		各ストリップに対して、そのストリップのバイトオフセット。ストリップのバイト数は64KByte を越えないように選定して書くことを推奨する。JPEG圧縮データでは不要なため書いてはならない。RowsPerStrip、StripByteCountsも参照されたい。
+0116	278	RowsPerStrip	1ストリップあたりの行の数	SHORT or LONG	1	なし		1ストリップあたりの行の数。画像をストリップに分割して書く場合の 1ストリップ当たりの画像の行数である。JPEG圧縮データでは不要なため書いてはならない。
+0117	279	StripByteCounts	ストリップの総バイト数	SHORT or LONG	StripsPerImage (PlanarConfiguration = 1のとき)\nSamplesPerPixel×StripsPerImage (PlanarConfiguration = 2のとき)	なし		各ストリップに対して、そのストリップの総バイト数。JPEG圧縮データでは不要なため書いてはならない。
+0201	513	JPEGInterchangeFormat	JPEGのSOIへのオフセット	LONG		なし		JPEG圧縮サムネイルデータの先頭バイト(SOI)へのバイトオフセット。サムネイルが JPEG圧縮の場合にのみ用いる。主画像の JPEGデータには記録してはならない。
+0202	514	JPEGInterchangeFormatLength	JPEGデータのバイト数	LONG		なし		JPEG圧縮サムネイルデータのバイト数を記録する。主画像の JPEGデータには用いない。JPEGサムネイルは、SOIから EOIまで全ての JPEGストリームを連続して記録し分割しない。APPn、COMマーカは記録しない。圧縮サムネイルのバイト数は、他に APP1に記録するすべてのデータを含めて 64KByteを越えないように記録しなければならない。
+012D	301	TransferFunction	再生階調カーブ特性	SHORT	3 * 256	なし		画像の変換関数をテーブル形式で表現したもの。通常は、色空間情報タグで色空間を規定するため、本タグを使用する必要はない。
+013E	318	WhitePoint	参照白色点の色度座標値	RATIONAL	2	なし		画像のホワイトポイントのクロマ。通常は、色空間情報タグで色空間を規定するため、本タグを使用する必要はない。
+013F	319	PrimaryChromaticities	原色の色度座標値	RATIONAL	6	なし		画像の 3原色のクロマ。通常は、色空間情報タグで色空間を規定するため、本タグを使用する必要はない。
+0211	529	YCbCrCoefficients	色変換マトリックス係数	RATIONAL	2	附属書 D 参照		RGBからYCbCr画像データへの色変換マトリクス係数。TIFF ではデフォルトの記載がないが 附属書 D、"色空間ガイドライン"で参照される特性をデフォルトとする。
+0214	532	ReferenceBlackWhite	参照黒色点値と参照白色点値	RATIONAL	6	[0, 255, 0, 255, 0, 255] (PhotometricInterpretationが RGBの場合)\n[0, 255, 0, 128, 0, 128] (PhotometricInterpretationが YCbCrの場合)		参照黒色点値と参照白色点値。TIFF ではデフォルトの記載がないが、以下の値をデフォルトとする。色空間情報タグで色空間を規定し、この条件に最適な特性を持つ画像を記録する場合はデフォルト値となる。
+0132	306	DateTime	ファイル変更日時	ASCII	20	なし		画像の作成された日付と時間。本規格では、ファイル変更日時として用いる。フォーマットは"YYYY:MM:DD HH:MM:SS"。時間は 24時間表示し、日付と時間の間に空白文字を 1つ埋める。日時不明の場合は、コロン"："以外の日付・時間の文字部を空白文字［20.H］で埋めるか、または、すべてを空白文字で埋めるべきである。文字列の長さは、NULLを含み 20Byteである。記載が無いときは不明として扱う。
+010E	270	ImageDescription	画像タイトル	ASCII	Any	なし		画像の題を表す文字列。例えば、画像に"1988 company picnic"などのコメントを付加できる。2バイトコードは記録できない。2バイトコードの記録が必要な場合には、Exif PrivateタグのUserCommentを使用する。
+010F	271	Make	画像入力機器のメーカ名	ASCII	Any	なし		記録機の製造業者。DSC、スキャナー、ビデオデジタイザー、その他の画像生成用機器の製造業者。記載が無いときは不明として扱う。
+0110	272	Model	画像入力機器のモデル名	ASCII	Any	なし		記録機のモデル名、又はモデル番号。DSC、スキャナー、ビデオデジタイザー、その他の画像生成用機器のモデル名、又はモデル番号。記載が無いときは不明として扱う。
+0131	305	Software	ソフトウェア	ASCII	Any	なし		このタグは、画像を生成するのに使用されたカメラ又は画像入力機器のソフトウェア又はファームウェアの名前とバージョンを記録する。書式の詳細は規定しないが、以下の例のように記述することを推奨する。記載が無いときは不明として扱う。\n例 "Exif Software Version 1.00a"
+013B	315	Artist	アーティスト	ASCII	Any	なし		このタグはカメラの所有者、写真家又は画像の作成者の名前を記録する。書式の詳細は規定しないが、以下の例のように内容が明快に判読できるように記述することを推奨する。記載が無いときは不明として扱う。\n例 "Camera owner, John Smith:Photographer, Michael Brown:Image creator, Ken James"
+8298	33432	Copyright	撮影著作権者／編集著作権者	ASCII	Any	なし		著作権表示。本規格では、撮影著作権者と編集著作権者双方の表示に用いる。その画像に対して著作権を主張する人又は組織の著作権表示。日付と権利の宣言を含む全ての著作権表示文は、このフィールドに書くべきである。例えば、"Copyright, John Smith, 19xx. All rights reserved."。本規格では、撮影著作権者と編集著作権者双方の表示に用い、各々を別の文字列として記録する。撮影著作権者と編集著作権者が明確に分かるときは、撮影著作権者、編集著作権者の順序で間にNULLを入れてそのコピーライトを記述する(この場合文字列の最後にもNULLを入れるため2つのNULLコードが書かれることになる)(例1 参照)。撮影著作権者のみを記述する場合は 1つの NULLコードで終端し(例 2 参照)、編集著作権者のみを記述する際は撮影著作権者を 1つのスペースコードで埋めて NULLコードで終端した後に編集著作権者を記述する(例3 参照)。記載が無いときは不明として扱う。\n例1. 撮影著作権者と編集著作権者を記載する場合\n  撮影著作権者 + NULL［00.H］ + 編集著作権者 + NULL［00.H］\n例2. 撮影著作権者のみを記載する場合\n  撮影著作権者 + NULL［00.H］\n例3. 編集著作権者のみを記載する場合\n  Space［20.H］+ NULL［00.H］ + 編集著作権者 + NULL［00.H］
+8769	34665	ExifIFDPointer	ExifIFDへのポインタ	LONG	1	なし		Exif IFD は、Exif 固有の付属情報を記載するためのタグの集まりであり、Exif プライベートタグの値で示されるTIFF ヘッダからのオフセット（Value Offset）でポイントされる。
+8825	34853	GPSInfoIFDPointer	GPSIFDへのポインタ	LONG	1	なし		GPS IFD は、GPS 情報を記載するためのタグの集まりであり、GPS プライベートタグの値で示されるTIFF ヘッダからオフセット（Value Offset）でポイントされる。

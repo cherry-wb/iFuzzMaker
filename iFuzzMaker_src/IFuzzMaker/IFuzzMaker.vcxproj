@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{09C21078-9F4F-4A90-81EF-71309C1CE1B0}</ProjectGuid>
+    <RootNamespace>IFuzzMaker</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>iFuzzMaker</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0411</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="res\fuzz-create.bmp" />
+    <None Include="res\IFuzzMaker.ico" />
+    <None Include="res\IFuzzMaker.rc2" />
+    <None Include="res\IFuzzMakerDoc.ico" />
+    <None Include="res\IPA_Logo.bmp" />
+    <None Include="res\jpeg_structure.bmp" />
+    <None Include="res\tabimage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppConfig.h" />
+    <ClInclude Include="AppConfigLoader.h" />
+    <ClInclude Include="AppMessage.h" />
+    <ClInclude Include="AutoDeleteArrayHelper.h" />
+    <ClInclude Include="AutoDeleteMapHelper.h" />
+    <ClInclude Include="ColumnTreeCtrl.h" />
+    <ClInclude Include="ConfigLoader.h" />
+    <ClInclude Include="CreateLogList.h" />
+    <ClInclude Include="EndianConverter.h" />
+    <ClInclude Include="ExifAnalyzer.h" />
+    <ClInclude Include="ExifData.h" />
+    <ClInclude Include="ExifInfoView.h" />
+    <ClInclude Include="ExifListView.h" />
+    <ClInclude Include="ExifSelectList.h" />
+    <ClInclude Include="ExifSelView.h" />
+    <ClInclude Include="FealdEntryData.h" />
+    <ClInclude Include="FealdEntryInfo.h" />
+    <ClInclude Include="FealdEntryInfoLoader.h" />
+    <ClInclude Include="FileBrowseCtrl.h" />
+    <ClInclude Include="FileReader.h" />
+    <ClInclude Include="FixedDatas.h" />
+    <ClInclude Include="FuzzCreateThread.h" />
+    <ClInclude Include="FuzzCreateView.h" />
+    <ClInclude Include="FuzzData.h" />
+    <ClInclude Include="FuzzSelectList.h" />
+    <ClInclude Include="FuzzSelView.h" />
+    <ClInclude Include="GroupListCtrl.h" />
+    <ClInclude Include="ImageFileDirectoryData.h" />
+    <ClInclude Include="ImageFileDirectoryInfo.h" />
+    <ClInclude Include="ImageFileDirectoryInfoLoader.h" />
+    <ClInclude Include="ImageStatic.h" />
+    <ClInclude Include="IFuzzMaker.h" />
+    <ClInclude Include="IFuzzMakerDoc.h" />
+    <ClInclude Include="IFuzzMakerView.h" />
+    <ClInclude Include="JpegAnalyzer.h" />
+    <ClInclude Include="JpegSelView.h" />
+    <ClInclude Include="JpegStructureList.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="PatternData.h" />
+    <ClInclude Include="PatternGroupData.h" />
+    <ClInclude Include="PatternGroupInfo.h" />
+    <ClInclude Include="PatternGroupInfoLoader.h" />
+    <ClInclude Include="PatternInfo.h" />
+    <ClInclude Include="PatternInfoLoader.h" />
+    <ClInclude Include="PatternSelectList.h" />
+    <ClInclude Include="PatternSelView.h" />
+    <ClInclude Include="ReadData.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SegmentAnalyzer.h" />
+    <ClInclude Include="SegmentData.h" />
+    <ClInclude Include="SegmentInfo.h" />
+    <ClInclude Include="SegmentInfoLoader.h" />
+    <ClInclude Include="SegmentItemData.h" />
+    <ClInclude Include="SegmentItemInfo.h" />
+    <ClInclude Include="SegmentItemInfoLoader.h" />
+    <ClInclude Include="SegmentItemSelectList.h" />
+    <ClInclude Include="SegmentItemSelView.h" />
+    <ClInclude Include="SizeFrameStatic.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SystemTime.h" />
+    <ClInclude Include="TabChildView.h" />
+    <ClInclude Include="TagData.h" />
+    <ClInclude Include="TagTypeInfo.h" />
+    <ClInclude Include="TagTypeInfoLoader.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextLoader.h" />
+    <ClInclude Include="UserDatas.h" />
+    <ClInclude Include="WndResizer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AppConfig.cpp" />
+    <ClCompile Include="AppConfigLoader.cpp" />
+    <ClCompile Include="ColumnTreeCtrl.cpp" />
+    <ClCompile Include="ConfigLoader.cpp" />
+    <ClCompile Include="CreateLogList.cpp" />
+    <ClCompile Include="EndianConverter.cpp" />
+    <ClCompile Include="ExifAnalyzer.cpp" />
+    <ClCompile Include="ExifData.cpp" />
+    <ClCompile Include="ExifInfoView.cpp" />
+    <ClCompile Include="ExifListView.cpp" />
+    <ClCompile Include="ExifSelectList.cpp" />
+    <ClCompile Include="ExifSelView.cpp" />
+    <ClCompile Include="FealdEntryData.cpp" />
+    <ClCompile Include="FealdEntryInfo.cpp" />
+    <ClCompile Include="FealdEntryInfoLoader.cpp" />
+    <ClCompile Include="FileBrowseCtrl.cpp" />
+    <ClCompile Include="FileReader.cpp" />
+    <ClCompile Include="FixedDatas.cpp" />
+    <ClCompile Include="FuzzCreateThread.cpp" />
+    <ClCompile Include="FuzzCreateView.cpp" />
+    <ClCompile Include="FuzzData.cpp" />
+    <ClCompile Include="FuzzSelectList.cpp" />
+    <ClCompile Include="FuzzSelView.cpp" />
+    <ClCompile Include="GroupListCtrl.cpp" />
+    <ClCompile Include="ImageFileDirectoryData.cpp" />
+    <ClCompile Include="ImageFileDirectoryInfo.cpp" />
+    <ClCompile Include="ImageFileDirectoryInfoLoader.cpp" />
+    <ClCompile Include="ImageStatic.cpp" />
+    <ClCompile Include="IFuzzMaker.cpp" />
+    <ClCompile Include="IFuzzMakerDoc.cpp" />
+    <ClCompile Include="IFuzzMakerView.cpp" />
+    <ClCompile Include="JpegAnalyzer.cpp" />
+    <ClCompile Include="JpegSelView.cpp" />
+    <ClCompile Include="JpegStructureList.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="PatternData.cpp" />
+    <ClCompile Include="PatternGroupData.cpp" />
+    <ClCompile Include="PatternGroupInfo.cpp" />
+    <ClCompile Include="PatternGroupInfoLoader.cpp" />
+    <ClCompile Include="PatternInfo.cpp" />
+    <ClCompile Include="PatternInfoLoader.cpp" />
+    <ClCompile Include="PatternSelectList.cpp" />
+    <ClCompile Include="PatternSelView.cpp" />
+    <ClCompile Include="ReadData.cpp" />
+    <ClCompile Include="SegmentAnalyzer.cpp" />
+    <ClCompile Include="SegmentData.cpp" />
+    <ClCompile Include="SegmentInfo.cpp" />
+    <ClCompile Include="SegmentInfoLoader.cpp" />
+    <ClCompile Include="SegmentItemData.cpp" />
+    <ClCompile Include="SegmentItemInfo.cpp" />
+    <ClCompile Include="SegmentItemInfoLoader.cpp" />
+    <ClCompile Include="SegmentItemSelectList.cpp" />
+    <ClCompile Include="SegmentItemSelView.cpp" />
+    <ClCompile Include="SizeFrameStatic.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SystemTime.cpp" />
+    <ClCompile Include="TabChildView.cpp" />
+    <ClCompile Include="TagData.cpp" />
+    <ClCompile Include="TagTypeInfo.cpp" />
+    <ClCompile Include="TagTypeInfoLoader.cpp" />
+    <ClCompile Include="TextLoader.cpp" />
+    <ClCompile Include="UserDatas.cpp" />
+    <ClCompile Include="WndResizer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IFuzzMaker.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="IFuzzMaker.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

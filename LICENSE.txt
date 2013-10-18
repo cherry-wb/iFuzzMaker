@@ -1,0 +1,278 @@
+================================================================================
+  独立行政法人情報処理推進機構 (IPA)
+  - Information-technology Promotion Agency, Japan -
+
+                                                    独立行政法人情報処理推進機構
+                                                   技術本部 セキュリティセンター
+                                                情報セキュリティ技術ラボラトリー
+
+      -- JPEG テスト支援ツール iFuzzMaker  --
+                                                                Date：2013/07/30
+--------------------------------------------------------------------------------
+  Copyright (c) 2013, IPA, Japan
+  All rights reserved.
+================================================================================
+
+◆ 0. はじめに 
+  この LICENSE ファイルは、iFuzzMaker のオープンソースソフトウェアライセンスや、
+  ライセンスに係る事項について記載しています。
+
+
+◆ 1. 利用条件
+  iFuzzMaker（ツール本体、ソースコード、関連する全てのドキュメント等を含む）をご
+  利用いただくには、「JPEG テスト支援ツール『iFuzzMaker』利用規約」（以下 利用規
+  約）への同意が必要です。なお、iFuzzMaker は、BSD License（The BSD 3-Clause 
+  License *1）および CPOL（The Code Project Open License *2）が定める条件の下で
+  配布されていますので、BSD License および CPOL の内容もご確認ください。
+
+  ・iFuzzMaker の利用規約は「iFuzzMaker_agreement.pdf」に記載しています。
+  ・BSD License が定めるライセンス条件および免責事項については「BSD-License.txt」
+    に記載しています。
+  ・CPOL が定めるライセンス条件および免責事項については「CPOL.htm」に記載してい
+    ます。
+
+  *1) The BSD 3-Clause License
+      http://opensource.org/licenses/BSD-3-Clause
+  *2) The Code Project Open License
+      http://www.codeproject.com/info/cpol10.aspx
+
+
+◆ 2. 著作権
+  iFuzzMakerの著作権は、BSD License 及び CPOL が定める条件の下で IPA が保有して
+  おり、国際条約及び著作権法により保護されています。
+
+
+◆ 3. オープンソースソフトウェアのライセンスについて
+  a. iFuzzMaker に含まれる以下の 4 つのソースコードは CPOL が定める条件の下で利
+     用できます。
+      - ColumnTreeCtrl.h
+      - ColumnTreeCtrl.cpp
+      - WndResizer.h
+      - WndResizer.cpp
+
+  b. a の 4 つのソースコードを除いた iFuzzMaker に含まれるソースコードは、BSD 
+     License が定める条件の下で利用できます。
+
+
+◆ 4. オープンソースソフトウェアライセンスの適用範囲
+  以下は iFuzzMaker のファイル構成とオープンソースソフトウェアライセンスの適用範
+  囲です。
+
+  ・CPOL が適用されているもの
+      --------  CPOL (ここから)  ---------------------------------------
+      --------  CPOL (ここまで)  ---------------------------------------
+
+  ・BSD License が適用されているもの
+      --------  BSD License (ここから)  --------------------------------
+      --------  BSD License (ここまで)  --------------------------------
+
+.\
+│  BSD-License.txt                          … BSD のライセンス条項
+│  CPOL.htm                                 … CPOL のライセンス条項
+│  iFuzzMaker_agreement.pdf                 … 利用規約
+│  iFuzzMaker_manual.pdf                    … 操作手順書
+│  README.txt                               … README ファイル
+│  LICENSE.txt                              … このファイル
+│  
+├─iFuzzMaker                               … iFuzzMaker の実行モジュール一式
+│  │  iFuzzMaker.exe                       … iFuzzMaker 本体
+│  │  iFuzzMaker.config                    … iFuzzMaker の設定ファイル
+│  │  IPA-SAMPLE.JPG                       … サンプル JPEG ファイル
+│  │  RegDel.bat                           … アンインストール用バッチファイル
+│  │  
+│  ├─Data
+│  │      TagType.txt                      … タグタイプ定義ファイル
+│  │      IFDList.txt                      … IFDリスト定義ファイル
+│  │      Segments.txt                     … セグメント情報ファイル
+│  │      SOF0-Param.txt                   … セグメント構造情報ファイル
+│  │      SOF0.txt                         … セグメント構造情報ファイル
+│  │      ExifIFD.txt                      … タグ情報ファイル
+│  │      GPSInfoIFD.txt                   … タグ情報ファイル
+│  │      Interoperability.txt             … タグ情報ファイル
+│  │      TIFFRev60.txt                    … タグ情報ファイル
+│  │      
+│  ├─Fuzz                                 … テストデータの出力先フォルダ
+│  │      
+│  └─TestRule
+│      │  sample-TestRule-List.txt         … テストデータ生成ルールリスト定義ファイル
+│      │  
+│      └─List
+│              sample-TestRule1.txt         … テストデータ生成ルールファイル
+│              sample-TestRule2.txt         … テストデータ生成ルールファイル
+│              sample-TestRule3.txt         … テストデータ生成ルールファイル
+│
+│
+└─iFuzzMaker_src                           … iFuzzMaker のソースコード一式
+    │
+    │  IFuzzMaker.sln                       … Visual Studio ソリューションファイル
+    │
+    └─IFuzzMaker
+        │  IFuzzMaker.vcxproj               … Visual C++ 関連ファイル
+        │  IFuzzMaker.vcxproj.filters       … Visual C++ 関連ファイル
+        │  IFuzzMaker.aps                   … Visual C++ 関連ファイル
+        │
+        │ --------  CPOL (ここから)  ---------------------------------------
+        │  ColumnTreeCtrl.cpp               … ColumnTreeCtrl クラス
+        │  ColumnTreeCtrl.h                 … ColumnTreeCtrl クラス
+        │  WndResizer.cpp                   … WndResizer クラス
+        │  WndResizer.h                     … WndResizer クラスヘッダ
+        │ --------  CPOL (ここまで)  ---------------------------------------
+        │
+        │ --------  BSD License (ここから)  --------------------------------
+        │  AppConfig.cpp                    … 設定ファイル管理クラス
+        │  AppConfig.h                      … 設定ファイル管理クラスヘッダ
+        │  AppConfigLoader.cpp              … 設定ファイル読み込みクラス
+        │  AppConfigLoader.h                … 設定ファイル読み込みクラスヘッダ
+        │  AppMessage.h                     … ウインドウメッセージ定義ヘッダ
+        │  AutoDeleteArrayHelper.h          … ポインタ配列管理テンプレートクラス
+        │  AutoDeleteMapHelper.h            … ポインタマップ管理テンプレートクラス
+        │  ConfigLoader.cpp                 … 設定ファイル読み込みクラス
+        │  ConfigLoader.h                   … 設定ファイル読み込みクラスヘッダ
+        │  CreateLogList.cpp                … ログ表示リストコントロールクラス
+        │  CreateLogList.h                  … ログ表示リストコントロールクラスヘッダ
+        │  EndianConverter.cpp              … バイトオーダー変換クラス
+        │  EndianConverter.h                … バイトオーダー変換クラスヘッダ
+        │  ExifAnalyzer.cpp                 … Exif 解析クラス
+        │  ExifAnalyzer.h                   … Exif 解析クラスヘッダ
+        │  ExifData.cpp                     … Exif データクラス
+        │  ExifData.h                       … Exif データクラスヘッダ
+        │  ExifInfoView.cpp                 … Exif タグ選択情報表示画面クラス
+        │  ExifInfoView.h                   … Exif タグ選択情報表示画面クラスヘッダ
+        │  ExifListView.cpp                 … Exif タグ選択リスト表示画面クラス
+        │  ExifListView.h                   … Exif タグ選択リスト表示画面クラスヘッダ
+        │  ExifSelectList.cpp               … Exif タグ選択リストコントロールクラス
+        │  ExifSelectList.h                 … Exif タグ選択リストコントロールクラスヘッダ
+        │  ExifSelView.cpp                  … Exif タグ選択画面クラス
+        │  ExifSelView.h                    … Exif タグ選択画面クラスヘッダ
+        │  FealdEntryData.cpp               … フィールドエントリデータクラス
+        │  FealdEntryData.h                 … フィールドエントリデータクラスヘッダ
+        │  FealdEntryInfo.cpp               … フィールドエントリ情報クラス
+        │  FealdEntryInfo.h                 … フィールドエントリ情報クラスヘッダ
+        │  FealdEntryInfoLoader.cpp         … タグ情報ファイル読み込みクラス
+        │  FealdEntryInfoLoader.h           … タグ情報ファイル読み込みクラスヘッダ
+        │  FileBrowseCtrl.cpp               … ファイル選択コントロールクラス
+        │  FileBrowseCtrl.h                 … ファイル選択コントロールクラスヘッダ
+        │  FileReader.cpp                   … バイナリファイル読み込みクラス
+        │  FileReader.h                     … バイナリファイル読み込みクラスヘッダ
+        │  FixedDatas.cpp                   … データ管理クラス
+        │  FixedDatas.h                     … データ管理クラスヘッダ
+        │  FuzzCreateThread.cpp             … テストデータ出力スレッドクラス
+        │  FuzzCreateThread.h               … テストデータ出力スレッドクラスヘッダ
+        │  FuzzCreateView.cpp               … テストデータ出力画面クラス
+        │  FuzzCreateView.h                 … テストデータ出力画面クラスヘッダ
+        │  FuzzData.cpp                     … テスト値データクラス
+        │  FuzzData.h                       … テスト値データクラスヘッダ
+        │  FuzzSelectList.cpp               … テスト値選択リストコントロールクラス
+        │  FuzzSelectList.h                 … テスト値選択リストコントロールクラスヘッダ
+        │  FuzzSelView.cpp                  … テスト値選択画面クラス
+        │  FuzzSelView.h                    … テスト値選択画面クラスヘッダ
+        │  GroupListCtrl.cpp                … グループ化リストコントロールクラス
+        │  GroupListCtrl.h                  … グループ化リストコントロールクラスヘッダ
+        │  IFuzzMaker.cpp                   … iFuzzMakerの APP クラス
+        │  IFuzzMaker.h                     … iFuzzMakerの APP クラスヘッダ
+        │  IFuzzMaker.rc                    … リソースファイル
+        │  IFuzzMakerDoc.cpp                … iFuzzMaker のドキュメントクラス
+        │  IFuzzMakerDoc.h                  … iFuzzMaker のドキュメントクラスヘッダ
+        │  IFuzzMakerView.cpp               … iFuzzMakerの ビュークラス
+        │  IFuzzMakerView.h                 … iFuzzMakerの ビュークラスヘッダ
+        │  ImageFileDirectoryData.cpp       … IFD データクラス
+        │  ImageFileDirectoryData.h         … IFD データクラスヘッダ
+        │  ImageFileDirectoryInfo.cpp       … IFD 情報クラス
+        │  ImageFileDirectoryInfo.h         … IFD 情報クラスヘッダ
+        │  ImageFileDirectoryInfoLoader.cpp … IFD 読み込みクラス
+        │  ImageFileDirectoryInfoLoader.h   … IFD 読み込みクラスヘッダ
+        │  ImageStatic.cpp                  … イメージ表示コントロールクラス
+        │  ImageStatic.h                    … イメージ表示コントロールクラスヘッダ
+        │  JpegAnalyzer.cpp                 … JPEG ファイル解析クラス
+        │  JpegAnalyzer.h                   … JPEG ファイル解析クラスヘッダ
+        │  JpegSelView.cpp                  … JPEG 選択画面クラス
+        │  JpegSelView.h                    … JPEG 選択画面クラスヘッダ
+        │  JpegStructureList.cpp            … JPEG 表示リストコントロールクラス
+        │  JpegStructureList.h              … JPEG 表示リストコントロールクラスヘッダ
+        │  MainFrm.cpp                      … iFuzzMakerの MainFrm クラス
+        │  MainFrm.h                        … iFuzzMakerの MainFrm クラスヘッダ
+        │  PatternData.cpp                  … テストデータ生成ルールデータクラス
+        │  PatternData.h                    … テストデータ生成ルールデータクラスヘッダ
+        │  PatternGroupData.cpp             … テストデータ生成ルールリストデータクラス
+        │  PatternGroupData.h               … テストデータ生成ルールリストデータクラスヘッダ
+        │  PatternGroupInfo.cpp             … テストデータ生成ルールリスト情報クラス
+        │  PatternGroupInfo.h               … テストデータ生成ルールリスト情報クラスヘッダ
+        │  PatternGroupInfoLoader.cpp       … テストデータ生成ルールリストファイル読み込みクラス
+        │  PatternGroupInfoLoader.h         … テストデータ生成ルールリストファイル読み込みクラスヘッダ
+        │  PatternInfo.cpp                  … テストデータ生成ルール情報クラス
+        │  PatternInfo.h                    … テストデータ生成ルール情報クラスヘッダ
+        │  PatternInfoLoader.cpp            … テストデータ生成ルールファイル読み込みクラス
+        │  PatternInfoLoader.h              … テストデータ生成ルールファイル読み込みクラスヘッダ
+        │  PatternSelectList.cpp            … テスト値選択リストコントロールクラス
+        │  PatternSelectList.h              … テスト値選択リストコントロールクラスヘッダ
+        │  PatternSelView.cpp               … テスト値選択画面クラス
+        │  PatternSelView.h                 … テスト値選択画面クラスヘッダ
+        │  ReadData.cpp                     … 読み込みデータクラス
+        │  ReadData.h                       … 読み込みデータクラスヘッダ
+        │  resource.h                       … リソースヘッダ
+        │  SegmentAnalyzer.cpp              … セグメント解析クラス
+        │  SegmentAnalyzer.h                … セグメント解析クラスヘッダ
+        │  SegmentData.cpp                  … セグメントデータクラス
+        │  SegmentData.h                    … セグメントデータクラスヘッダ
+        │  SegmentInfo.cpp                  … セグメント情報クラス
+        │  SegmentInfo.h                    … セグメント情報クラスヘッダ
+        │  SegmentInfoLoader.cpp            … セグメント情報ファイル読み込みクラス
+        │  SegmentInfoLoader.h              … セグメント情報ファイル読み込みクラスヘッダ
+        │  SegmentItemData.cpp              … セグメント構造情報データクラス
+        │  SegmentItemData.h                … セグメント構造情報データクラスヘッダ
+        │  SegmentItemInfo.cpp              … セグメント構造情報クラス
+        │  SegmentItemInfo.h                … セグメント構造情報クラスヘッダ
+        │  SegmentItemInfoLoader.cpp        … セグメント構造情報ファイル読み込みクラス
+        │  SegmentItemInfoLoader.h          … セグメント構造情報ファイル読み込みクラスヘッダ
+        │  SegmentItemSelectList.cpp        … セグメント要素選択リストコントロールクラス
+        │  SegmentItemSelectList.h          … セグメント要素選択リストコントロールクラスヘッダ
+        │  SegmentItemSelView.cpp           … セグメント要素選択画面
+        │  SegmentItemSelView.h             … セグメント要素選択画面ヘッダ
+        │  SizeFrameStatic.cpp              … リサイズコントロールクラス
+        │  SizeFrameStatic.h                … リサイズコントロールクラスヘッダ
+        │  stdafx.cpp                       … stdafx ファイル
+        │  stdafx.h                         … stdafx ファイルヘッダ
+        │  SystemTime.cpp                   … システム時間クラス
+        │  SystemTime.h                     … システム時間クラスヘッダ
+        │  TabChildView.cpp                 … タブコントロール内の View クラス
+        │  TabChildView.h                   … タブコントロール内の View クラスヘッダ
+        │  TagData.cpp                      … タグデータクラス
+        │  TagData.h                        … タグデータクラスヘッダ
+        │  TagTypeInfo.cpp                  … タグタイプ情報クラス
+        │  TagTypeInfo.h                    … タグタイプ情報クラスヘッダ
+        │  TagTypeInfoLoader.cpp            … タグタイプ定義ファイル読み込みクラス
+        │  TagTypeInfoLoader.h              … タグタイプ定義ファイル読み込みクラスヘッダ
+        │  targetver.h                      … targetver ヘッダ
+        │  TextLoader.cpp                   … テキストファイル読み込みクラス
+        │  TextLoader.h                     … テキストファイル読み込みクラスヘッダ
+        │  UserDatas.cpp                    … データ管理クラス
+        │  UserDatas.h                      … データ管理クラスヘッダ
+        │ --------  BSD License (ここまで)  --------------------------------
+        │
+        └─res
+                fuzz-create.bmp              … テストデータ出力ログのアイコン
+                IFuzzMaker.ico               … iFuzzMaker のアイコン
+                IFuzzMaker.rc2               … リソースファイル
+                IFuzzMakerDoc.ico            … iFuzzMaker のドキュメントアイコン
+                IPA_Logo.bmp                 … IPA ロゴ
+                jpeg_structure.bmp           … JPEG 選択リストのアイコン
+                tabimage.bmp                 … タブコントロールのアイコン
+
+
+◆ 5. ソースコードの変更箇所
+  以下は CPOL が適用されているソースコードにおいて、IPA が変更した箇所を示すソー
+  スコード内のコメントです。
+
+  ・追加：以下のコメントで囲まれた範囲が IPA にて追加した箇所
+    //	IPA Add ->
+    //	IPA Add <-
+
+  ・変更：以下のコメントで囲まれた範囲が IPA にて変更した箇所
+    //	IPA Mod ->
+    //	IPA Mod <-
+
+  ・削除：以下のコメントで囲まれた範囲が IPA にて削除した箇所
+    //	IPA Del ->
+    //	IPA Del <-
+
+                                                                            以上

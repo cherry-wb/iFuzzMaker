@@ -1,0 +1,3 @@
+SOF0.Ci	Ci	Component identifier	1	1		
+SOF0.Hi/Vi	Hi/Vi	Horizontal sampling factor/Vertical sampling factor	1	1		
+SOF0.Tqi	Tqi	Quantization table destination selector	1	1		

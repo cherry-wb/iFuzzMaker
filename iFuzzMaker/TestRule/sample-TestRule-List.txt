@@ -1,0 +1,3 @@
+1	Stack/Heap Overflows	.\TestRule\list\sample-TestRule1.txt
+1	Format Strings	.\TestRule\list\sample-TestRule2.txt
+1	Integer Overflows	.\TestRule\list\sample-TestRule3.txt

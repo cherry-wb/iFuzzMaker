@@ -1,0 +1,5 @@
+0001	1	InteroperabilityIndex	互換性識別子	ASCII	ANY	なし	R98 = ExifR98で規定される R98ファイル及び Design rule for Camera File systemで規定される DCF基本ファイル\n"THM" = Design rule for Camera File systemで規定される DCFサムネイルファイル\n"R03" = Design rule for Camera File System で規定される DCFオプションファイル	互換性の規則の種類を示す。
+0002	2	InteroperabilityVersion	互換バージョン	UNDEFINED	4	0100		Interoperability のバージョンを記載する。ファイル内容はExifR98 と同等のため、Version1.00 を意味する4Byte のASCII"0100"とする。Type がUNDEFINED のため末尾をNULL で終端しない。
+1000	4096	RelatedImageFileFormat	関連画像ファイル形式	ASCII	ANY	なし		[R98]\n本来は DCF サムネイルファイル内に記載するタグであるが、DCF 基本ファイル内に記載してもよい。その際は自身の形式（Exif JPEG Ver.2.1など）を記載する。ASCII 文字列で記録する。\n\n[THM]\n関連する DCF 拡張画像ファイルのファイル形式をDCF サムネイルファイル内に記載するために用いる。ASCII 文字列で記録する。
+1001	4097	RelatedImageWidth	関連画像の幅	SHORT or LONG	1	なし		[R98]\n本来は DCF サムネイルファイル内に記載するタグであるが、DCF 基本ファイル内に記載してもよい。その際は自身の横画素数を記載する。\n\n[THM]\n関連する DCF 拡張画像ファイルの横画素数をDCF サムネイルファイル内に記載するために用いる。
+1002	4098	RelatedImageLength	関連画像の高さ	SHORT or LONG	1	なし		[R98]\n本来は DCF サムネイルファイル内に記載するタグであるが、DCF 基本ファイル内に記載してもよい。その際は自身の縦画素数を記載する。\n\n[THM]\n関連する DCF 拡張画像ファイルの画像の縦画素数をDCF サムネイルファイル内に記載するために用いる。

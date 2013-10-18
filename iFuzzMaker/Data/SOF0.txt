@@ -1,0 +1,7 @@
+SOF0.Marker	Marker	Marker	2	3		
+SOF0.Lf	Lf	Frame header length	2	3		
+SOF0.P	P	Sample precision	1	1		
+SOF0.Y	Y	Number of lines	2	3		
+SOF0.X	X	Number of samples per line	2	3		
+SOF0.Nf	Nf	Number of image components in frame	1	1		
+SOF0.cs	cs	Frame component-specification parameters	0	0	SOF0.Nf	.\data\SOF0-Param.txt

@@ -1,0 +1,6 @@
+Unknown	Unknown	ïsñæ	0	.\data\TIFFRev60.txt
+Primary	Primary	0th IFD	1	.\data\TIFFRev60.txt
+Thumbnail	Thumbnail	1st IFD	2	.\data\TIFFRev60.txt
+8769	ExifIFD	ExifIFD	n	.\data\ExifIFD.txt
+8825	GPSInfoIFD	GPSIFD	n	.\data\GPSInfoIFD.txt
+A005	InteroperabilityIFD	å›ä∑ê´IFD	n	.\data\Interoperability.txt

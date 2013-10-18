@@ -1,0 +1,32 @@
+0000	0	GPSVersionID	GPSタグのバージョン	BYTE	4	2.3.0.0	2.3.0.0 = バージョン2.3\nその他 = 予約	GPSInfoIFDのバージョンを示す。バージョンは 2.3.0.0とする。GPSInfo tagが記載される場合はこのタグを記載しなければならない。GPSVersionIDタグは Exif Versionタグとは異なり Byteで記入するので注意する。
+0001	1	GPSLatitudeRef	北緯（N）or南緯（S）	ASCII	2	なし	'N' = 北緯\n'S' = 南緯\nその他 = 予約	緯度の北緯もしくは南緯を示す。ASCII 値で'N'は北緯、'S'は南緯を示す。
+0002	2	GPSLatitude	緯度（数値）	RATIONAL	3	なし		緯度を表す。緯度は、2 つのRATIONAL によって表現し、それぞれ度、分、秒を表す。緯度の表記を度分秒で表す場合 dd/1,mm/1,ss/1 で表現する。度分単位の場合は例として分単位を小数点第2 位以下まで表記する場合、dd/1,mmmm/100,0/1 で表現する。
+0003	3	GPSLongitudeRef	東経（E）or西経（W）	ASCII	2	なし	'E' = 東経\n'W' = 西経\nその他 = 予約	経度の東経もしくは西経を示す。ASCII 値で'E'は東経、'W'は西経を示す。
+0004	4	GPSLongitude	経度（数値）	RATIONAL	3	なし		経度を表す。経度は 3つの RATIONALによって表現し、それぞれ度、分、秒を表す。緯度の表記を度分秒で表す場合、例として ddd/1、mm/1、ss/1で表現する。度分単位の場合は例として分単位を小数点第 2位以下まで表記する場合、ddd/1、mmmm/100、0/1で表現する。
+0005	5	GPSAltitudeRef	高度の単位	BYTE	1	0	0 = 海抜基準\n1 = 海抜基準（負値）\nその他 = 予約	このタグは、高度の基準を示す。基準が海抜であり高度が海抜より高い場合は 0を記録する。高度が海抜より低い場合は 1とし、GPSAltitudeタグには高度の絶対値を記録する。基準単位はメートルとする。このタグのタイプは BYTEであり、他のリファレンスタグとは異なるため注意が必要である。
+0006	6	GPSAltitude	高度（数値）	RATIONAL	1	なし		このタグは GPSAltitudeRef を基準とした高度を表す。高度は1 つのRATIONAL によって表現する。基準単位はメートルとする。
+0007	7	GPSTimeStamp	GPS時間（原子時計の時間）	RATIONAL	3	なし		UTC（Coordinated Universal Time）時刻を示す。TimeStamp は3 つのRATIONAL によって表現し、それぞれ時間、分、秒に対応する。
+0008	8	GPSSatellites	測位につかった衛星信号	ASCII	Any	なし		測位に用いた GPS 衛星を示す。これらはASCII で表現され、衛星の数、衛星の番号、衛星の仰角、衛星の方位角、衛星のSNRなどを記述できる。記述のフォーマットについては規定しない。ただし、GPS受信器が測位できなかった場合、このタグはNULL とする。
+0009	9	GPSStatus	GPS受信機の状態	ASCII	2	なし	'A' = 測位中\n'V' = 未測位（中断中）\nその他 = 予約	記録時の GPS 受信機の状態をあらわす。'A'が測位中を表し、'V'が未測位（中断中）を示す。
+000A	10	GPSMeasureMode	GPSの測位方法	ASCII	2	なし	'2' = 2 次元測位中\n'3' = 3 次元測位中\nその他 = 予約	GPS の測位モードを示す。'2'が2 次元測位中であるを示し、'3'が3 次元測位中であることを示す。
+000B	11	GPSDOP	測位の信頼性	RATIONAL	1	なし		GPS のDOP 値（データの信頼性）を示す。2 次元測位中の場合は、HDOPの値を書き込み、3 次元測位中の場合は、PDOP の値を書き込む。
+000C	12	GPSSpeedRef	速度の単位	ASCII	2	'K'	'K' = キロメータ\n'M' = マイル\n'N' = ノット\nその他 = 予約	GPS 受信器の移動速度の単位を示す。'K'はキロメータ／時を示し、'M'はマイル／時を示し、'N'はノットを示す。
+000D	13	GPSSpeed	速度（数値）	RATIONAL	1	なし		GPS 受信器の進行方向の基準を示す。'T'は真方位、'M'は磁気方位を示す。
+000E	14	GPSTrackRef	進行方向の単位	ASCII	2	'T'	'T' = 真方位\n'M' = 磁気方位\nその他 = 予約	GPS 受信器の進行方向の基準を示す。'T'は真方位、'M'は磁気方位を示す。
+000F	15	GPSTrack	進行方向（数値）	RATIONAL	1	なし		GPS 受信器の進行方向を示す。値は0.00～359.99 までの範囲をとる。
+0010	16	GPSImgDirectionRef	撮影した画像の方向の単位	ASCII	2	'T'	'T' = 真方位\n'M' = 磁気方位\nその他 = 予約	記録した画像の撮影方向の基準を示す。'T'は真方位、'M'は磁気方位を示す。
+0011	17	GPSImgDirection	撮影した画像の方向（数値）	RATIONAL	1	なし		記録した画像の撮影方向を示す。値は 0.00～359.99 までの範囲をとる。
+0012	18	GPSMapDatum	測位に用いた地図データ	ASCII	Any	なし		GPS受信機が使用した測地系を示す。日本で採用されている測地系として、"TOKYO"もしくは"WGS-84"等がある。GPS Infoタグを記録する場合には、本タグを記録することを強く推奨する。
+0013	19	GPSDestLatitudeRef	目的地の北緯（N）or南緯（S）	ASCII	2	なし	'N' = 北緯\n'S' = 南緯\nその他 = 予約	目的地の緯度の北緯もしくは南緯を示す。ASCII 値で'N'は北緯、'S'は南緯を示す。
+0014	20	GPSDestLatitude	目的地の緯度（数値）	RATIONAL	3	なし		目的地の緯度を示す、緯度は 3 つのRATIONAL によって表現され、それぞれ、度分秒を表す。緯度の表記を度分秒で表す場合 dd/1,mm/1,ss/1 で表現する。度分単位の場合は例として分単位を小数点第2 位以下まで表記する場合、dd/1,mmmm/100,0/1 で表現する。
+0015	21	GPSDestLongitudeRef	目的地の東経（E）or西経（W）	ASCII	2	なし	'E' = 東経\n'W' = 西経\nその他 = 予約	目的地の東経もしくは西経を示す。ASCII 値で'E'は東経、'W'は西経を示す。
+0016	22	GPSDestLongitude	目的地の経度（数値）	RATIONAL	3	なし		目的地の経度を示す。経度は 2 つのRATIONAL によって表現され、それぞれ度分秒を示す。緯度の表記を度分秒で表す場合 dd/1,mm/1,ss/1 で表現する。度分単位の場合は例として分単位を小数点第2 位以下まで表記する場合、dd/1,mmmm/100,0/1 で表現する。
+0017	23	GPSDestBearingRef	目的地の方角の単位	ASCII	2	'T'	'T' = 真方位\n'M' = 磁気方位\nその他 = 予約	目的地への方向の基準を示す。'T'は真方位、'M'は磁気方位を示す。
+0018	24	GPSDestBearing	目的の方角（数値）	RATIONAL	1	なし		目的地への方向を示す。値は 0.00～359.99 の範囲をとる。
+0019	25	GPSDestDistanceRef	目的地までの距離の単位	ASCII	2	'K'	'K' = キロメートル\n'M' = マイル\n'N' = 海里\nその他 = 予約	目的地までの距離の単位を示す。'K'がキロメートル、'M'がマイル、'N'が海里を示す。
+0020	26	GPSDestDistance	目的地までの距離（数値）	RATIONAL	1	なし	注記：Type がASCII のタグは、すべてNULL で終端しなければならない。\nN 値には終端NULL の分まで含まれるため、N 数の総計が"データ数+1"となり注意が必要である。例えば、GPSLatitudeRef は、Type ASCII で'N'もしくは'S'以外は値をとりえないが、終端としてNULL が付け加わるため、N 値は2 となる。	目的地までの距離を示す。
+001B	27	GPSProcessingMethod	測位方式の名称	UNDEFINED	Any	なし	このタグは、もともと GPS用に定義されたが、GPSに加えて携帯基地局や無線 LANで得られた置情報も記録してもよい。本タグ及び関連タグは、これらの手法により測位された情報を記録る際に、以下の例のように使用することができる。\n携帯電話基地局(cell-id)のデータが位置情報の算出に用いられた場合：\n・ GPSProcessingMethodタグに文字列"CELLID"を ASCIIで記録する。\n・ GPSMeasureModeタグを記録する。（CELLIDの場合、通常"2"）\n無線 LANのデータが位置情報の算出に用いられた場合：\n・ GPSProcessingMethodタグに文字列"WLAN"を ASCIIで記録する。\n・ GPSMeasureModeタグを記録する。（無線 LANの場合、通常"2"）\nGPS衛星のデータが位置情報の算出に用いられた場合：\n・ GPSProcessingMethodタグに文字列"GPS"を ASCIIで記録する。\n・ GPSMeasureModeタグを記録する。（GPSの場合、"2"または"3"）\n上記３つの方式が複数、位置情報の算出に用いられた場合（ハイブリッド方式）：\n・ GPSProcessingMethodタグに文字列"CELLID"、"WLAN"、"GPS"のうち用いた方  スペースを空けて列挙する。その際、測位に最も寄与した方式を先頭に記載する。・ GPSMeasureModeには位置情報の算出に最も寄与した測位モードを記録する。\n位置情報(Exif GPS IFD:1-6）が手入力で入力された場合：\n・ GPSProcessingMethodタグに文字列"MANUAL"を ASCIIで記録する。\n・ GPSMeasureModeタグは記録しない。	測位に使用した方式の名称を文字列で示す。記録形式は，先頭 8Byteで使用する文字コード(表 9，表 10)を指定し，それに続いて測位方式の名称を記録する。なお，TYPEはASCIIではないためNULLで終端する必要はない。
+001C	28	GPSAreaInformation	測位地点の名称	UNDEFINED	Any	なし		測位地点の名称を文字列で示す。記録形式は、先頭 8Byteで使用する文字コード(表 9、表 10)を指定し、それに続いて測位地点の名称を記録する。なお、TYPEはASCIIではないためNULLで終端する必要はない。
+001D	29	GPSDateStamp	GPS日付	ASCII	11	なし		UTC(Coordinated Universal Time)に基づく日付情報を記録する。フォーマットは"YYYY:MM:DD"。文字列の長さは NULLを含めて 11Byteである。
+001E	30	GPSDifferential	GPS補正測位	SHORT	1	なし	0 = 単独測位\n1 = Differtial補正測位\nその他 = 予約	GPS受信機の Differential補正の有無を示す。
+001F	31	GPSHPositioningError	水平方向測位誤差	RATIONAL	1	なし		水平方向の測位誤差をメートル単位で示す。

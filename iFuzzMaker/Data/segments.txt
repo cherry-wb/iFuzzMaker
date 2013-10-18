@@ -1,0 +1,63 @@
+FFC0	SOF0	フレームタイプ０開始	ハフマン式コードのベースラインDCTフレーム	1	0	1	.\data\SOF0.txt
+FFC1	SOF1	フレームタイプ１開始	ハフマン式コードの拡張シーケンシャルDCTフレーム	1	0	0	
+FFC2	SOF2	フレームタイプ２開始	ハフマン式コードのプログレッシブDCTフレーム	1	0	0	
+FFC3	SOF3	フレームタイプ３開始	ハフマン式コードの可逆(Spatial DPCM)フレーム	1	0	0	
+FFC4	DHT	ハフマン法テーブル定義		1	0	0	
+FFC5	SOF5	フレームタイプ５開始	ハフマン式コードの差分拡張シーケンシャルフレーム	1	0	0	
+FFC6	SOF6	フレームタイプ６開始	ハフマン式コードの差分プログレッシブフレーム	1	0	0	
+FFC7	SOF7	フレームタイプ７開始	ハフマン式コードの差分可逆(Spatial DPCM)フレーム	1	0	0	
+FFC8	JPG	予約	拡張のための予備	1	0	0	
+FFC9	SOF9	フレームタイプ９開始	算術式コードの拡張シーケンシャルDCTフレーム	1	0	0	
+FFCA	SOF10	フレームタイプ１０開始	算術式コードのプログレッシブDCTフレーム	1	0	0	
+FFCB	SOF11	フレームタイプ１１開始	算術式コードの可逆(Spatial DPCM)フレーム	1	0	0	
+FFCC	DAC	DAC	算術式圧縮テーブルを定義する	1	0	0	
+FFCD	SOF13	フレームタイプ１３開始	算術式コードの差分拡張シーケンシャルDCTフレーム	1	0	0	
+FFCE	SOF14	フレームタイプ１４開始	算術式コードの差分プログレッシブDCTフレーム	1	0	0	
+FFCF	SOF15	フレームタイプ１５開始	算術式コードの差分の可逆(Spatial DPCM)フレーム	1	0	0	
+FFD0	RST0	RST0	０でリスタートする	1	0	0	
+FFD1	RST1	RST1	１でリスタートする	1	0	0	
+FFD2	RST2	RST2	２でリスタートする	1	0	0	
+FFD3	RST3	RST3	３でリスタートする	1	0	0	
+FFD4	RST4	RST4	４でリスタートする	1	0	0	
+FFD5	RST5	RST5	５でリスタートする	1	0	0	
+FFD6	RST6	RST6	６でリスタートする	1	0	0	
+FFD7	RST7	RST7	７でリスタートする	1	0	0	
+FFD8	SOI	イメージの開始		0	0	0	
+FFD9	EOI	イメージの終了		0	0	0	
+FFDA	SOS	スキャンの開始		1	1	0	
+FFDB	DQT	量子化テーブル定義		1	0	0	
+FFDC	DNL	DNL	行数を定義する	1	0	0	
+FFDD	DRI	DRI	リスタートの間隔を定義する	1	0	0	
+FFDE	DHP	DHP	階層行数を定義する(ハイアラーキカル方式)	1	0	0	
+FFDF	EXP	EXP	標準イメージの拡張参照	1	0	0	
+FFE0	APP0	タイプ０のアプリケーション	JFIF	1	0	0	
+FFE1	APP1	タイプ１のアプリケーション	Exif、http:	1	0	0	
+FFE2	APP2	タイプ２のアプリケーション	ICC_P	1	0	0	
+FFE3	APP3	タイプ３のアプリケーション		1	0	0	
+FFE4	APP4	タイプ４のアプリケーション		1	0	0	
+FFE5	APP5	タイプ５のアプリケーション		1	0	0	
+FFE6	APP6	タイプ６のアプリケーション		1	0	0	
+FFE7	APP7	タイプ７のアプリケーション		1	0	0	
+FFE8	APP8	タイプ８のアプリケーション		1	0	0	
+FFE9	APP9	タイプ９のアプリケーション		1	0	0	
+FFEA	APP10	タイプ１０のアプリケーション		1	0	0	
+FFEB	APP11	タイプ１１のアプリケーション		1	0	0	
+FFEC	APP12	タイプ１２のアプリケーション	Ducky	1	0	0	
+FFED	APP13	タイプ１３のアプリケーション	Photo	1	0	0	
+FFEE	APP14	タイプ１４のアプリケーション	Adobe	1	0	0	
+FFEF	APP15	タイプ１５のアプリケーション		1	0	0	
+FFF0	JPG0	予約	JPEGの拡張のための予備	1	0	0	
+FFF1	JPG1	予約	JPEGの拡張のための予備	1	0	0	
+FFF2	JPG2	予約	JPEGの拡張のための予備	1	0	0	
+FFF3	JPG3	予約	JPEGの拡張のための予備	1	0	0	
+FFF4	JPG4	予約	JPEGの拡張のための予備	1	0	0	
+FFF5	JPG5	予約	JPEGの拡張のための予備	1	0	0	
+FFF6	JPG6	予約	JPEGの拡張のための予備	1	0	0	
+FFF7	JPG7	予約	JPEGの拡張のための予備	1	0	0	
+FFF8	JPG8	予約	JPEGの拡張のための予備	1	0	0	
+FFF9	JPG9	予約	JPEGの拡張のための予備	1	0	0	
+FFFA	JPG10	予約	JPEGの拡張のための予備	1	0	0	
+FFFB	JPG11	予約	JPEGの拡張のための予備	1	0	0	
+FFFC	JPG12	予約	JPEGの拡張のための予備	1	0	0	
+FFFD	JPG13	予約	JPEGの拡張のための予備	1	0	0	
+FFFE	COM	コメント	コメント	1	0	0	
